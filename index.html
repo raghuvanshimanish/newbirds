@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Teacher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="Cache-control" content="public">
+  
+  <link href="./../static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./../static/css/bootstrap-responsive.min.css" rel="stylesheet">
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+	 <a class="brand" href="">Python</a>
+    </div>
+  </div>
+ </div>
+
+<div class="main">
+  <div class="main-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+	      <div class="widget ">
+	      	<div class="widget-header"> <i class="icon-user"></i><h3>Fill Information</h3> </div> 
+			  <div class="widget-content">
+
+ 
+ <form action="signup" method="post" enctype="multipart/form-data">		
+    <div class="login-fields2">
+ 	 <div class="field">
+	  <label for="firstname">Name:</label>
+	    <input type="text" id="name" name="name" value="" required="requirede" placeholder="Name" class="login" />
+	  </div>
+	<div class="field">
+	  <label for="firstname">Email:</label>
+	   <input type="text" id="email" name="email" value="" required="requirede" placeholder="Email" class="login" />
+	</div>
+	<div class="field">
+	  <label for="lastname">Contact:</label>	
+	   <input type="text" id="contact" name="contact" value="" required="requirede" maxlength="10" placeholder="Contact" class="login" />
+	</div>	
+	<div class="field">
+	  <label for="lastname">City:</label>	
+	   <input type="city" id="city" name="city" value="" required="requirede" placeholder="City" class="login" />
+	</div>
+	<div class="field">
+	  <label for="lastname">Company:</label>	
+	   <input type="cpny" id="cpny" name="cpny" value="" required="requirede" placeholder="Company" class="login" />
+	</div>
+   </div>
+	<div class="login-actions">
+	<button class="button btn1 btn1-primary1 btn1-large1">Register</button>
+    </div>
+</form>
+		
+			</div> 
+		  </div>    
+		  </div>
+
+  <div class="span6">
+   <div class="widget">
+     <div class="widget-header"> 
+	  <i class="icon-bookmark"></i>
+	   <h3>Show Record</h3>
+       </div>
+        <div class="widget-content-student-name">
+         <div class="tabbable">
+		  <br>
+    <div class="sortcuts">
+
+<table border="1" width="520px" >
+  {% for display in dis %}
+    <tr><td width="500px"><h6>{{ display[0] }}</h6></td>	
+    <td width="500px"><h6>{{ display[1] }}</h6></td>
+    <td width="500px"><h6>{{ display[2]}}</h6></td>
+    <td width="500px"><h6>{{ display[3]}}</h6></td>
+    <td width="500px"><h6>{{ display[4]}}</h6></td>
+    <td width="500px"><h6>{{ display[5]}}</h6></td>
+    <td width="500px"><h6>
+	    <form method="post" action="delete">
+           <button type="submit"  name="del"  value="{{ display[0] }}" />Delete</button>
+		 </form></h6>
+	</td>
+    </tr>
+    {%endfor%}
+</table>
+   
+   </div>
+</div>
+	 
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+  </div>
+ </body>
+</html>
